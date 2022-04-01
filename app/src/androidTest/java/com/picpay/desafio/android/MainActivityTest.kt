@@ -5,13 +5,16 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+//import androidx.test.runner.AndroidJUnit4
 import com.desafio.picpay.android.testcoreutil.MockServerRule
-import com.picpay.desafio.android.RecyclerViewMatchers.checkRecyclerViewItem
+import com.desafio.picpay.android.testcoreutil.RecyclerViewMatchers.checkRecyclerViewItem
 import com.picpay.desafio.android.ui.view.MainActivity
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 
+@RunWith(androidx.test.ext.junit.runners.AndroidJUnit4::class)
 class MainActivityTest {
 
     @get:Rule
@@ -34,4 +37,5 @@ class MainActivityTest {
         checkRecyclerViewItem(R.id.rvUsers, 1, withText("Maria"))
         checkRecyclerViewItem(R.id.rvUsers, 2, withText("Robert"))
     }
+
 }

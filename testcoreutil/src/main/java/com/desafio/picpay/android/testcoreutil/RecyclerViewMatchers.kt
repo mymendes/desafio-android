@@ -1,4 +1,4 @@
-package com.picpay.desafio.android
+package com.desafio.picpay.android.testcoreutil
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
@@ -6,6 +6,7 @@ import androidx.test.espresso.Espresso
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 
@@ -35,5 +36,7 @@ object RecyclerViewMatchers {
                 )
             )
         )
+
+
     }
 }

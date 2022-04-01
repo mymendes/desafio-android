@@ -1,6 +1,6 @@
 package com.picpay.desafio.android.ui.presentation
 
-import com.picpay.desafio.android.data.User
+import com.picpay.desafio.android.domain.User
 
 class UserMapper {
 

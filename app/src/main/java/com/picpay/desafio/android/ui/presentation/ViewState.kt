@@ -8,7 +8,7 @@ sealed class ViewState<T>(
 ) {
     class Loading<T> : ViewState<T>(progress = true)
 
-    class Success<T>(val data: T) : ViewState<T>(success = true)
+    data class Success<T>(val data: T) : ViewState<T>(success = true)
 
     class Empty<T> : ViewState<T>(empty = true)
 
