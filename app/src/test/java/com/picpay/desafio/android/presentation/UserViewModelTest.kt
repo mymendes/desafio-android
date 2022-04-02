@@ -95,24 +95,6 @@ class UserViewModelTest {
 
     }
 
-    /*
-    internal class GetMaaSWebViewUrlUseCaseTest {
-    private val repository = mockk<MaaSWebViewRepository>(relaxed = true)
-    private val useCase = GetMaaSWebViewUrlUseCase(repository)
-
-    @Test
-    fun `invoke should call repository with correct callback url`() {
-        // Given
-        val callbackUrl = "picpay://picpay/wallet"
-
-        // When
-        useCase()
-
-        // Then
-        verify { repository.getMaaSWebViewUrl(callbackUrl) }
-    }
-}
-     */
 
     @Test
     fun `given a user list when the use case is called then should return success status 4`() {

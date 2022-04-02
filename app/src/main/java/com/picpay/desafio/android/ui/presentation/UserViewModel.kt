@@ -1,7 +1,5 @@
 package com.picpay.desafio.android.ui.presentation
 
-import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -9,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.picpay.desafio.android.domain.FetchUseCase
 import kotlinx.coroutines.launch
 import com.picpay.desafio.android.domain.Result
-private const val KEY = "key"
-const val KEY_2 = "key"
+
+private const val USER_PARAM = "user_param"
 
 class UserViewModel(
     private val savedStateHandle: SavedStateHandle,
@@ -20,7 +18,7 @@ class UserViewModel(
 
     val userState = MutableLiveData<ViewState<ArrayList<UserViewObject>>>()
 
-    private val objSaved by lazy { savedStateHandle.get<ArrayList<UserViewObject>>(KEY) }
+    private val objSaved by lazy { savedStateHandle.get<ArrayList<UserViewObject>>(USER_PARAM) }
 
     init {
         fetchUsers()
@@ -45,15 +43,10 @@ class UserViewModel(
     }
 
     private fun setState(value: ArrayList<UserViewObject>){
-        savedStateHandle.set(KEY, value)
+        savedStateHandle.set(USER_PARAM, value)
     }
 
     fun getState(){
         userState.value = objSaved?.let { ViewState.Success(it) }
     }
-
-
-
-
-
 }

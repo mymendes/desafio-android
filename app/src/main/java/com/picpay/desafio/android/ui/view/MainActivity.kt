@@ -2,22 +2,16 @@ package com.picpay.desafio.android.ui.view
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.picpay.desafio.android.R
 import com.picpay.desafio.android.databinding.ActivityMainBinding
-import com.picpay.desafio.android.ui.presentation.KEY_2
 import com.picpay.desafio.android.ui.presentation.UserViewModel
 import com.picpay.desafio.android.ui.presentation.UserViewObject
 import com.picpay.desafio.android.ui.presentation.ViewState
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.androidx.viewmodel.factory.StateViewModelFactory
-import org.koin.core.parameter.parametersOf
-
-
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -35,22 +29,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val view = binding.root
         setContentView(view)
         observeLoadUsers()
-      //  viewModel.fetchUsers()
-
-  /*      if (savedInstanceState == null) {
-            viewModel.fetchUsers()
-        } else {
-            viewModel.getState()
-        }*/
     }
-
-/*    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-
-
-
-        users?.let { viewModel.setState(it) }
-    }*/
 
     private fun observeLoadUsers() {
         viewModel.userState.observe(this, { state ->
@@ -85,15 +64,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        Log.i("###", "buscando do state")
-
         viewModel.getState()
-        /*val bundle = Bundle()
-        bundle.putParcelableArrayList(LIST_USER, users)
-        onSaveInstanceState(bundle)*/
-    }
-
-    companion object {
-        private const val LIST_USER = "list_user"
     }
 }

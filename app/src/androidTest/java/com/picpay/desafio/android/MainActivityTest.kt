@@ -37,5 +37,4 @@ class MainActivityTest {
         checkRecyclerViewItem(R.id.rvUsers, 1, withText("Maria"))
         checkRecyclerViewItem(R.id.rvUsers, 2, withText("Robert"))
     }
-
 }
